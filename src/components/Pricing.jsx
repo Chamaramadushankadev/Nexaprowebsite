@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Check, Star, Zap } from 'lucide-react';
 
 const Pricing = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isYearly, setIsYearly] = useState(false);
 
   // Placeholder Stripe checkout function
   const handleStripeCheckout = (planName, priceId) => {
@@ -26,8 +27,8 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Personal',
-      price: '$9',
-      period: '/month',
+      monthlyPrice: 9,
+      yearlyPrice: 72, // 20% discount
       description: 'Perfect for individuals getting started',
       features: [
         'All core productivity features',
@@ -39,12 +40,13 @@ const Pricing = () => {
       ],
       buttonText: 'Start Free Trial',
       popular: false,
-      priceId: 'price_personal_monthly'
+      monthlyPriceId: 'price_personal_monthly',
+      yearlyPriceId: 'price_personal_yearly'
     },
     {
       name: 'Professional',
-      price: '$29',
-      period: '/month',
+      monthlyPrice: 29,
+      yearlyPrice: 232, // 20% discount
       description: 'Ideal for professionals and small teams',
       features: [
         'Everything in Personal',
@@ -58,12 +60,13 @@ const Pricing = () => {
       ],
       buttonText: 'Get Started',
       popular: true,
-      priceId: 'price_professional_monthly'
+      monthlyPriceId: 'price_professional_monthly',
+      yearlyPriceId: 'price_professional_yearly'
     },
     {
       name: 'Enterprise',
-      price: '$99',
-      period: '/month',
+      monthlyPrice: 99,
+      yearlyPrice: 792, // 20% discount
       description: 'For large teams and organizations',
       features: [
         'Everything in Professional',
@@ -77,10 +80,22 @@ const Pricing = () => {
       ],
       buttonText: 'Contact Sales',
       popular: false,
-      priceId: 'price_enterprise_monthly'
+      monthlyPriceId: 'price_enterprise_monthly',
+      yearlyPriceId: 'price_enterprise_yearly'
     }
   ];
 
+  const getCurrentPrice = (plan) => {
+    return isYearly ? plan.yearlyPrice : plan.monthlyPrice;
+  };
+
+  const getCurrentPriceId = (plan) => {
+    return isYearly ? plan.yearlyPriceId : plan.monthlyPriceId;
+  };
+
+  const getPeriodText = () => {
+    return isYearly ? '/year' : '/month';
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -133,13 +148,30 @@ const Pricing = () => {
           {/* Billing Toggle */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center glass-effect rounded-full p-1"
+            className="inline-flex items-center glass-effect rounded-full p-1 relative"
           >
-            <button className="px-6 py-3 text-sm font-medium text-white bg-apple-blue rounded-full shadow-lg">
+            <button 
+              onClick={() => setIsYearly(false)}
+              className={`px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 relative z-10 ${
+                !isYearly 
+                  ? 'text-white bg-apple-blue shadow-lg' 
+                  : 'text-gray-600 dark:text-gray-300 hover:text-apple-blue'
+              }`}
+            >
               Monthly
             </button>
-            <button className="px-6 py-3 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-apple-blue transition-colors duration-200">
-              Yearly (Save 20%)
+            <button 
+              onClick={() => setIsYearly(true)}
+              className={`px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 relative z-10 ${
+                isYearly 
+                  ? 'text-white bg-apple-blue shadow-lg' 
+                  : 'text-gray-600 dark:text-gray-300 hover:text-apple-blue'
+              }`}
+            >
+              <span>Yearly</span>
+              <span className="ml-1 text-xs bg-apple-green text-white px-2 py-1 rounded-full">
+                Save 20%
+              </span>
             </button>
           </motion.div>
         </motion.div>
@@ -184,12 +216,17 @@ const Pricing = () => {
                 </p>
                 <div className="flex items-baseline justify-center">
                   <span className="text-5xl font-bold text-gray-900 dark:text-white">
-                    {plan.price}
+                    ${getCurrentPrice(plan)}
                   </span>
                   <span className="text-xl text-gray-600 dark:text-gray-300 ml-1 font-light">
-                    {plan.period}
+                    {getPeriodText()}
                   </span>
                 </div>
+                {isYearly && (
+                  <div className="text-sm text-apple-green mt-2">
+                    Save ${(plan.monthlyPrice * 12) - plan.yearlyPrice} per year
+                  </div>
+                )}
               </div>
 
               {/* Features */}
@@ -208,7 +245,7 @@ const Pricing = () => {
 
               {/* CTA Button */}
               <motion.button
-                onClick={() => handleStripeCheckout(plan.name, plan.priceId)}
+                onClick={() => handleStripeCheckout(plan.name, getCurrentPriceId(plan))}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 px-6 rounded-full font-medium transition-all duration-300 ${
@@ -238,7 +275,7 @@ const Pricing = () => {
           className="text-center mt-20"
         >
           <p className="text-gray-600 dark:text-gray-300 mb-6 font-light">
-            All plans include a 14-day free trial. No credit card required.
+            All plans include a 14-day free trial. No credit card required. {isYearly ? 'Billed annually.' : 'Billed monthly.'}
           </p>
           <div className="flex flex-wrap justify-center items-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
             <span>✓ Cancel anytime</span>
