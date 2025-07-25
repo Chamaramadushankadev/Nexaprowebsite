@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import ContactSupportModal from './ContactSupportModal';
 
 const FAQ = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [openIndex, setOpenIndex] = useState(0);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const faqs = [
     {
@@ -160,11 +162,18 @@ const FAQ = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => setIsContactModalOpen(true)}
             className="btn-secondary text-lg px-10 py-4"
           >
             Contact Support
           </motion.button>
         </motion.div>
+
+        {/* Contact Support Modal */}
+        <ContactSupportModal 
+          isOpen={isContactModalOpen} 
+          onClose={() => setIsContactModalOpen(false)} 
+        />
       </div>
     </section>
   );
