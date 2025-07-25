@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Star } from 'lucide-react';
+import { ArrowRight, Play, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (href) => {
@@ -10,69 +10,85 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-apple-gray-6 to-apple-gray-5 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-primary-400/20 to-purple-400/20 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-apple-blue/10 to-apple-purple/10 rounded-full blur-3xl"
         />
         <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-primary-400/20 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            rotate: [360, 180, 0],
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-apple-green/10 to-apple-blue/10 rounded-full blur-3xl"
         />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium mb-8"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="inline-flex items-center space-x-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/50 text-apple-blue px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-lg"
           >
-            <Star size={16} className="text-primary-500" />
-            <span>Trusted by 10,000+ companies worldwide</span>
+            <Sparkles size={16} className="text-apple-blue" />
+            <span>The all-in-one productivity workspace</span>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+            transition={{ duration: 1, delay: 0.4 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white mb-8 leading-tight tracking-tight"
           >
-            Build Amazing
-            <span className="bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent"> SaaS Products</span>
+            Productivity
             <br />
-            In Record Time
+            <span className="bg-gradient-to-r from-apple-blue via-apple-purple to-apple-pink bg-clip-text text-transparent">
+              Reimagined
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 1, delay: 0.6 }}
+            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light"
           >
-            The complete platform for modern teams to build, deploy, and scale applications with confidence. Start your journey today.
+            Everything you need to stay organized, focused, and productive. 
+            From task management to AI-powered insights, all in one beautiful workspace.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 1, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16"
           >
             <motion.button
               onClick={() => scrollToSection('#pricing')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary flex items-center space-x-2 text-lg px-8 py-4"
+              className="btn-primary flex items-center space-x-2 text-lg px-10 py-4"
             >
               <span>Start Free Trial</span>
               <ArrowRight size={20} />
@@ -81,7 +97,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-secondary flex items-center space-x-2 text-lg px-8 py-4"
+              className="btn-secondary flex items-center space-x-2 text-lg px-10 py-4"
             >
               <Play size={20} />
               <span>Watch Demo</span>
@@ -90,22 +106,22 @@ const Hero = () => {
 
           {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
+            transition={{ duration: 1, delay: 1 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
           >
             {[
-              { number: '10K+', label: 'Active Users' },
+              { number: '50K+', label: 'Active Users' },
               { number: '99.9%', label: 'Uptime' },
               { number: '24/7', label: 'Support' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
                 whileHover={{ y: -5 }}
-                className="text-center"
+                className="text-center p-6 glass-effect rounded-2xl"
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-apple-blue mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-600 dark:text-gray-400 font-medium">
@@ -132,7 +148,7 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2"
+            className="w-1 h-3 bg-apple-blue rounded-full mt-2"
           />
         </motion.div>
       </motion.div>

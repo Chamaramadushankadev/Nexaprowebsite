@@ -9,36 +9,36 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'CTO at TechCorp',
-      company: 'TechCorp',
+      name: 'Sarah Chen',
+      role: 'Product Manager',
+      company: 'TechFlow',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-      content: 'This platform has revolutionized how we build and deploy applications. The speed and reliability are unmatched.',
+      content: 'ProductivePro has completely transformed how our team works. The intuitive design and powerful features make productivity feel effortless.',
       rating: 5
     },
     {
-      name: 'Michael Chen',
-      role: 'Lead Developer at StartupXYZ',
-      company: 'StartupXYZ',
+      name: 'Marcus Rodriguez',
+      role: 'Freelance Designer',
+      company: 'Independent',
       image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-      content: 'The developer experience is fantastic. We reduced our deployment time by 80% and our team productivity has skyrocketed.',
+      content: 'As a freelancer, staying organized is crucial. This platform keeps all my projects, clients, and deadlines in perfect harmony.',
       rating: 5
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Product Manager at InnovateLab',
-      company: 'InnovateLab',
+      name: 'Emily Watson',
+      role: 'Startup Founder',
+      company: 'InnovateNow',
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-      content: 'Outstanding support and features. This tool has become essential to our development workflow.',
+      content: 'The AI-powered features and seamless integrations have saved us countless hours. It\'s like having a productivity assistant built right in.',
       rating: 5
     }
   ];
 
   const stats = [
-    { number: '50K+', label: 'Happy Customers' },
-    { number: '99.9%', label: 'Uptime SLA' },
-    { number: '24/7', label: 'Expert Support' },
-    { number: '150+', label: 'Countries Served' }
+    { number: '100K+', label: 'Happy Users' },
+    { number: '99.9%', label: 'Uptime' },
+    { number: '4.9/5', label: 'User Rating' },
+    { number: '24/7', label: 'Support' }
   ];
 
   const containerVariants = {
@@ -52,7 +52,7 @@ const Testimonials = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -71,20 +71,23 @@ const Testimonials = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight"
           >
-            Loved by
-            <span className="bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent"> Developers</span>
+            Loved by teams
+            <br />
+            <span className="bg-gradient-to-r from-apple-blue to-apple-purple bg-clip-text text-transparent">
+              everywhere.
+            </span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light"
           >
-            Join thousands of developers and teams who trust our platform to build amazing products.
+            Join thousands of professionals who have transformed their productivity with our platform.
           </motion.p>
         </motion.div>
 
@@ -93,15 +96,15 @@ const Testimonials = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="text-center"
+              className="text-center glass-effect rounded-2xl p-6"
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-apple-blue mb-2">
                 {stat.number}
               </div>
               <div className="text-gray-600 dark:text-gray-400 font-medium">
@@ -126,22 +129,22 @@ const Testimonials = () => {
                 y: -10,
                 transition: { duration: 0.3 }
               }}
-              className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 relative"
+              className="glass-effect rounded-3xl p-8 card-hover relative"
             >
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-primary-200 dark:text-primary-800">
+              <div className="absolute top-6 right-6 text-apple-blue/20">
                 <Quote size={32} />
               </div>
 
               {/* Rating */}
               <div className="flex items-center space-x-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="text-yellow-400 fill-current" />
+                  <Star key={i} size={16} className="text-apple-yellow fill-current" />
                 ))}
               </div>
 
               {/* Content */}
-              <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed font-light">
                 "{testimonial.content}"
               </p>
 
@@ -171,12 +174,12 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-primary text-lg px-8 py-4"
+            className="btn-primary text-lg px-10 py-4"
           >
             Join Our Community
           </motion.button>

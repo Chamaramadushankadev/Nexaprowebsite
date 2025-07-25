@@ -62,7 +62,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       {/* Newsletter Section */}
       <div className="border-b border-gray-800">
-        <div className="container-custom py-16">
+        <div className="container-custom py-20">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
@@ -70,15 +70,15 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="text-3xl md:text-4xl font-bold mb-4"
             >
-              Stay in the loop
+              Stay productive
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-300 mb-8"
+              className="text-xl text-gray-300 mb-8 font-light"
             >
-              Get the latest updates, tips, and exclusive content delivered to your inbox.
+              Get the latest productivity tips, feature updates, and exclusive content delivered to your inbox.
             </motion.p>
             
             <motion.div
@@ -90,12 +90,12 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400"
+                className="flex-1 px-4 py-3 glass-effect rounded-full focus:ring-2 focus:ring-apple-blue/50 focus:border-transparent text-white placeholder-gray-400"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                className="bg-apple-blue hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg"
               >
                 <span>Subscribe</span>
                 <ArrowRight size={18} />
@@ -116,14 +116,15 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="mb-6"
             >
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">S</span>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-8 h-8 bg-gradient-to-br from-apple-blue to-apple-purple rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-sm">P</span>
                 </div>
-                <span className="text-2xl font-bold">SaaS Pro</span>
+                <span className="text-2xl font-bold">ProductivePro</span>
               </div>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                The complete platform for modern teams to build, deploy, and scale applications with confidence. Join thousands of developers worldwide.
+              <p className="text-gray-300 leading-relaxed mb-6 font-light">
+                The all-in-one productivity workspace designed to help you work smarter, not harder. 
+                Join thousands of professionals worldwide.
               </p>
               
               {/* Social Links */}
@@ -136,7 +137,7 @@ const Footer = () => {
                       href={social.href}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+                      className="w-10 h-10 glass-effect hover:bg-apple-blue/20 rounded-xl flex items-center justify-center transition-colors duration-300"
                       aria-label={social.label}
                     >
                       <Icon size={18} />
@@ -161,7 +162,7 @@ const Footer = () => {
                   <li key={linkIndex}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-left"
+                      className="text-gray-300 hover:text-apple-blue transition-colors duration-200 text-left font-light"
                     >
                       {link.name}
                     </button>
@@ -181,20 +182,20 @@ const Footer = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center space-x-2 text-gray-400"
+              className="flex items-center space-x-2 text-gray-400 font-light"
             >
-              <span>© {currentYear} SaaS Pro. All rights reserved.</span>
+              <span>© {currentYear} ProductivePro. All rights reserved.</span>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center space-x-2 text-gray-400"
+              className="flex items-center space-x-2 text-gray-400 font-light"
             >
               <span>Made with</span>
               <Heart size={16} className="text-red-500 fill-current" />
-              <span>by the SaaS Pro team</span>
+              <span>in Cupertino</span>
             </motion.div>
           </div>
         </div>

@@ -24,21 +24,22 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="fixed top-0 left-0 right-0 z-50 glass-effect"
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-3"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
+            <div className="w-8 h-8 bg-gradient-to-br from-apple-blue to-apple-purple rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-sm">P</span>
             </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">SaaS Pro</span>
+            <span className="text-xl font-semibold text-gray-900 dark:text-white">ProductivePro</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -47,8 +48,9 @@ const Header = () => {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200"
+                className="text-gray-600 dark:text-gray-300 hover:text-apple-blue dark:hover:text-apple-blue font-medium transition-colors duration-200"
                 whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {item.name}
               </motion.button>
@@ -68,11 +70,11 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-3">
             <ThemeToggle />
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-600 dark:text-gray-300"
+              className="p-2 text-gray-600 dark:text-gray-300 hover:text-apple-blue transition-colors duration-200"
               whileTap={{ scale: 0.95 }}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,14 +89,15 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-200 dark:border-gray-700"
+              transition={{ duration: 0.3 }}
+              className="md:hidden border-t border-white/10 dark:border-gray-700/50"
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item) => (
                   <motion.button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
+                    className="block w-full text-left px-4 py-3 text-gray-600 dark:text-gray-300 hover:text-apple-blue hover:bg-white/5 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200"
                     whileHover={{ x: 4 }}
                   >
                     {item.name}

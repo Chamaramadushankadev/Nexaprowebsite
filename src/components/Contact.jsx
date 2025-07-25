@@ -33,20 +33,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'hello@saaspro.com',
+      content: 'hello@productivepro.com',
       description: 'Send us an email anytime'
     },
     {
       icon: Phone,
       title: 'Call Us',
       content: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 8am to 6pm'
+      description: 'Mon-Fri from 8am to 6pm PST'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: '123 Business Ave, Suite 100',
-      description: 'San Francisco, CA 94105'
+      content: '1 Infinite Loop',
+      description: 'Cupertino, CA 95014'
     }
   ];
 
@@ -61,7 +61,7 @@ const Contact = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -80,20 +80,23 @@ const Contact = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight"
           >
-            Get in
-            <span className="bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent"> Touch</span>
+            Let's start
+            <br />
+            <span className="bg-gradient-to-r from-apple-blue to-apple-purple bg-clip-text text-transparent">
+              something great.
+            </span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light"
           >
-            Ready to get started? Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Ready to transform your productivity? Have questions? We'd love to hear from you.
           </motion.p>
         </motion.div>
 
@@ -106,17 +109,17 @@ const Contact = () => {
           >
             <motion.div
               variants={itemVariants}
-              className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700"
+              className="glass-effect rounded-3xl p-8"
             >
               <div className="flex items-center space-x-3 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-apple-blue to-apple-purple rounded-2xl flex items-center justify-center shadow-lg">
                   <MessageCircle size={24} className="text-white" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                     Send us a message
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300 font-light">
                     We'll get back to you within 24 hours
                   </p>
                 </div>
@@ -135,7 +138,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors duration-200"
+                      className="w-full px-4 py-3 glass-effect rounded-xl focus:ring-2 focus:ring-apple-blue/50 focus:border-transparent text-gray-900 dark:text-white transition-all duration-200"
                       placeholder="John Doe"
                     />
                   </div>
@@ -150,7 +153,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors duration-200"
+                      className="w-full px-4 py-3 glass-effect rounded-xl focus:ring-2 focus:ring-apple-blue/50 focus:border-transparent text-gray-900 dark:text-white transition-all duration-200"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -166,7 +169,7 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 glass-effect rounded-xl focus:ring-2 focus:ring-apple-blue/50 focus:border-transparent text-gray-900 dark:text-white transition-all duration-200"
                     placeholder="Your Company"
                   />
                 </div>
@@ -182,7 +185,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors duration-200 resize-none"
+                    className="w-full px-4 py-3 glass-effect rounded-xl focus:ring-2 focus:ring-apple-blue/50 focus:border-transparent text-gray-900 dark:text-white transition-all duration-200 resize-none"
                     placeholder="Tell us about your project or ask us a question..."
                   />
                 </div>
@@ -214,19 +217,19 @@ const Contact = () => {
                   key={index}
                   variants={itemVariants}
                   whileHover={{ x: 10 }}
-                  className="flex items-start space-x-4 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300"
+                  className="flex items-start space-x-4 glass-effect p-6 rounded-2xl card-hover"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-r from-apple-blue to-apple-purple rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     <Icon size={24} className="text-white" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                       {info.title}
                     </h4>
-                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">
+                    <p className="text-apple-blue font-medium mb-1">
                       {info.content}
                     </p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm font-light">
                       {info.description}
                     </p>
                   </div>
@@ -237,18 +240,18 @@ const Contact = () => {
             {/* Additional CTA */}
             <motion.div
               variants={itemVariants}
-              className="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-8 text-white"
+              className="bg-gradient-to-r from-apple-blue to-apple-purple rounded-3xl p-8 text-white"
             >
               <h4 className="text-2xl font-bold mb-4">
                 Ready to get started?
               </h4>
-              <p className="mb-6 opacity-90">
-                Join thousands of companies already using our platform to build amazing products.
+              <p className="mb-6 opacity-90 font-light">
+                Join thousands of professionals already using ProductivePro to transform their workflow.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-primary-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-apple-blue font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors duration-200"
               >
                 Start Free Trial
               </motion.button>

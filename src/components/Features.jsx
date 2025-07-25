@@ -2,12 +2,21 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { 
-  Zap, 
-  Shield, 
-  Globe, 
-  BarChart3, 
-  Users, 
-  Smartphone 
+  Home,
+  Target,
+  CheckSquare,
+  StickyNote,
+  FileText,
+  Bell,
+  Clock,
+  Video,
+  Mail,
+  Send,
+  DollarSign,
+  BarChart3,
+  MessageCircle,
+  Settings,
+  HelpCircle
 } from 'lucide-react';
 
 const Features = () => {
@@ -16,40 +25,94 @@ const Features = () => {
 
   const features = [
     {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Built for speed with optimized performance and instant loading times across all devices.',
-      color: 'from-yellow-500 to-orange-500'
+      icon: Home,
+      title: 'Dashboard Overview',
+      description: 'Get a complete snapshot of your tasks, goals, and productivity in one place.',
+      color: 'from-blue-500 to-indigo-500',
     },
     {
-      icon: Shield,
-      title: 'Enterprise Security',
-      description: 'Bank-level security with end-to-end encryption and compliance with industry standards.',
-      color: 'from-green-500 to-emerald-500'
+      icon: Target,
+      title: 'Goal Tracking',
+      description: 'Set and track personal or team goals with measurable progress indicators.',
+      color: 'from-green-500 to-teal-500',
     },
     {
-      icon: Globe,
-      title: 'Global Scale',
-      description: 'Deploy worldwide with our global CDN and edge computing infrastructure.',
-      color: 'from-blue-500 to-cyan-500'
+      icon: CheckSquare,
+      title: 'Task Management',
+      description: 'Manage daily tasks with checklists, deadlines, and Kanban boards.',
+      color: 'from-purple-500 to-pink-500',
+    },
+    {
+      icon: StickyNote,
+      title: 'Smart Notes',
+      description: 'Capture thoughts and ideas in structured, searchable notes.',
+      color: 'from-yellow-500 to-orange-500',
+    },
+    {
+      icon: FileText,
+      title: 'Proposal Builder',
+      description: 'Create, edit, and send professional proposals to clients with ease.',
+      color: 'from-cyan-500 to-blue-500',
+    },
+    {
+      icon: Bell,
+      title: 'Reminders',
+      description: 'Stay on top of deadlines with smart reminders and recurring alerts.',
+      color: 'from-rose-500 to-red-500',
+    },
+    {
+      icon: Clock,
+      title: 'Pomodoro Timer',
+      description: 'Boost focus and productivity using the built-in Pomodoro timer.',
+      color: 'from-orange-500 to-amber-500',
+    },
+    {
+      icon: Video,
+      title: 'YouTube Script Assistant',
+      description: 'Generate SEO-friendly video scripts with AI-powered prompts.',
+      color: 'from-pink-500 to-fuchsia-500',
+    },
+    {
+      icon: Mail,
+      title: 'Unified Inbox',
+      description: 'Handle all your business emails from one clean, integrated space.',
+      color: 'from-indigo-500 to-violet-500',
+    },
+    {
+      icon: Send,
+      title: 'Cold Email Automation',
+      description: 'Automate outreach with warm-up and AI-personalized cold emails.',
+      color: 'from-blue-500 to-sky-500',
+    },
+    {
+      icon: DollarSign,
+      title: 'Finance Tracking',
+      description: 'Track income, expenses, and generate invoices easily.',
+      color: 'from-emerald-500 to-green-500',
     },
     {
       icon: BarChart3,
-      title: 'Advanced Analytics',
-      description: 'Real-time insights and detailed analytics to help you make data-driven decisions.',
-      color: 'from-purple-500 to-pink-500'
+      title: 'Analytics & Insights',
+      description: 'Gain deep insights into your performance with detailed reports.',
+      color: 'from-violet-500 to-purple-500',
     },
     {
-      icon: Users,
-      title: 'Team Collaboration',
-      description: 'Seamless collaboration tools designed for modern distributed teams.',
-      color: 'from-indigo-500 to-purple-500'
+      icon: MessageCircle,
+      title: 'AI-Powered Chat',
+      description: 'Collaborate with your team or AI assistant inside your workspace.',
+      color: 'from-slate-500 to-gray-700',
     },
     {
-      icon: Smartphone,
-      title: 'Mobile First',
-      description: 'Responsive design that works perfectly on all devices and screen sizes.',
-      color: 'from-pink-500 to-rose-500'
+      icon: Settings,
+      title: 'Custom Settings',
+      description: 'Personalize your workspace layout, preferences, and themes.',
+      color: 'from-gray-500 to-gray-800',
+    },
+    {
+      icon: HelpCircle,
+      title: 'Help & Support',
+      description: 'Access guides, tutorials, and contact support anytime.',
+      color: 'from-red-400 to-pink-400',
     }
   ];
 
@@ -58,13 +121,13 @@ const Features = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -83,20 +146,23 @@ const Features = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight"
           >
-            Powerful Features for
-            <span className="bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent"> Modern Teams</span>
+            Everything you need.
+            <br />
+            <span className="bg-gradient-to-r from-apple-blue to-apple-purple bg-clip-text text-transparent">
+              Nothing you don't.
+            </span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light"
           >
-            Everything you need to build, deploy, and scale your applications with confidence and ease.
+            A comprehensive suite of productivity tools designed to help you work smarter, not harder.
           </motion.p>
         </motion.div>
 
@@ -104,7 +170,7 @@ const Features = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -113,31 +179,23 @@ const Features = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ 
-                  y: -10,
+                  y: -8,
                   transition: { duration: 0.3 }
                 }}
-                className="group relative bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600"
+                className="group glass-effect rounded-3xl p-8 card-hover"
               >
-                {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-purple-50/50 dark:from-primary-900/20 dark:to-purple-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon size={28} className="text-white" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {feature.description}
-                  </p>
+                {/* Icon */}
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <Icon size={28} className="text-white" />
                 </div>
 
-                {/* Hover Effect Border */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl" />
+                {/* Content */}
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 group-hover:text-apple-blue dark:group-hover:text-apple-blue transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+                  {feature.description}
+                </p>
               </motion.div>
             );
           })}
@@ -147,13 +205,13 @@ const Features = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="text-center mt-16"
+          transition={{ delay: 1.5, duration: 0.6 }}
+          className="text-center mt-20"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-primary text-lg px-8 py-4"
+            className="btn-primary text-lg px-10 py-4"
           >
             Explore All Features
           </motion.button>

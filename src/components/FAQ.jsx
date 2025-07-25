@@ -32,7 +32,7 @@ const FAQ = () => {
     },
     {
       question: 'Can I integrate with other tools?',
-      answer: 'Yes! We offer integrations with popular tools like Slack, GitHub, Jira, and many more. We also provide a comprehensive API for custom integrations.'
+      answer: 'Yes! We offer integrations with popular tools like Slack, Google Workspace, Microsoft 365, and many more. We also provide a comprehensive API for custom integrations.'
     }
   ];
 
@@ -51,7 +51,7 @@ const FAQ = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -63,27 +63,30 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="faq" className="section-padding bg-apple-gray-6 dark:bg-gray-800">
       <div className="container-custom">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight"
           >
-            Frequently Asked
-            <span className="bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent"> Questions</span>
+            Questions?
+            <br />
+            <span className="bg-gradient-to-r from-apple-blue to-apple-purple bg-clip-text text-transparent">
+              We have answers.
+            </span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-light"
           >
-            Got questions? We've got answers. If you can't find what you're looking for, feel free to contact our support team.
+            Everything you need to know about ProductivePro. Can't find what you're looking for? Contact our support team.
           </motion.p>
         </motion.div>
 
@@ -101,7 +104,7 @@ const FAQ = () => {
             >
               <motion.button
                 onClick={() => toggleFAQ(index)}
-                className="w-full bg-white dark:bg-gray-900 rounded-lg p-6 text-left border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full glass-effect rounded-2xl p-6 text-left hover:bg-white/10 dark:hover:bg-gray-800/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-apple-blue/50"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >
@@ -115,7 +118,7 @@ const FAQ = () => {
                     className="flex-shrink-0"
                   >
                     {openIndex === index ? (
-                      <Minus size={24} className="text-primary-600" />
+                      <Minus size={24} className="text-apple-blue" />
                     ) : (
                       <Plus size={24} className="text-gray-400" />
                     )}
@@ -132,8 +135,8 @@ const FAQ = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="bg-white dark:bg-gray-900 border-l-4 border-primary-500 p-6 ml-4 mr-4 -mt-2 rounded-b-lg border border-gray-200 dark:border-gray-700 border-t-0">
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="glass-effect border-l-4 border-apple-blue p-6 ml-4 mr-4 -mt-2 rounded-b-2xl">
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-light">
                         {faq.answer}
                       </p>
                     </div>
@@ -149,15 +152,15 @@ const FAQ = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6 font-light">
             Still have questions? We're here to help.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-secondary text-lg px-8 py-4"
+            className="btn-secondary text-lg px-10 py-4"
           >
             Contact Support
           </motion.button>
