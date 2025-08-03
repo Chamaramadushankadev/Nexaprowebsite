@@ -41,6 +41,12 @@ const ThankYou = () => {
       description: 'We\'ve sent your getting started guide.',
       action: 'Open Email App'
     },
+      {
+    icon: UserPlus,
+    title: 'Invite Team Members',
+    description: 'Collaborate faster by adding teammates to your workspace.',
+    action: 'Invite Now'
+  },
     {
       icon: Sparkles,
       title: 'Start Your Journey',
