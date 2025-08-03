@@ -17,11 +17,14 @@ const Pricing = () => {
     // const { error } = await stripe.redirectToCheckout({
     //   lineItems: [{ price: priceId, quantity: 1 }],
     //   mode: 'subscription',
-    //   successUrl: `${window.location.origin}/success`,
+    //   successUrl: `${window.location.origin}/thank-you?email={CHECKOUT_SESSION_CUSTOMER_EMAIL}`,
     //   cancelUrl: `${window.location.origin}/cancel`,
     // });
     
-    alert(`Stripe checkout would be initiated for ${planName} plan`);
+    // For demo purposes, redirect to thank you page
+    const demoEmail = 'demo@example.com';
+    localStorage.setItem('userEmail', demoEmail);
+    window.location.href = `/thank-you?email=${demoEmail}`;
   };
 
   const plans = [
