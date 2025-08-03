@@ -38,14 +38,8 @@ const ThankYou = () => {
     {
       icon: Mail,
       title: 'Check Your Email',
-      description: 'We\'ve sent your login credentials and getting started guide.',
+      description: 'We\'ve sent your getting started guide.',
       action: 'Open Email App'
-    },
-    {
-      icon: Download,
-      title: 'Download Apps',
-      description: 'Get our mobile and desktop apps for the best experience.',
-      action: 'Download Now'
     },
     {
       icon: Sparkles,
