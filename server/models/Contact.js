@@ -68,7 +68,7 @@ const contactSchema = new mongoose.Schema({
 });
 
 // Indexes for better query performance
-contactSchema.index({ email: 1 });
+
 contactSchema.index({ status: 1 });
 contactSchema.index({ priority: 1 });
 contactSchema.index({ createdAt: -1 });
