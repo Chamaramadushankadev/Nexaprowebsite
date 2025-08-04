@@ -246,7 +246,7 @@ const Contact = () => {
                 Ready to get started?
               </h4>
               <p className="mb-6 opacity-90 font-light">
-                Join thousands of professionals already using ProductivePro to transform their workflow.
+                Join thousands of professionals already using Nexa Pro to transform their workflow.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}

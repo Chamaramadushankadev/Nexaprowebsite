@@ -231,7 +231,7 @@ const ThankYou = () => {
             Need Help Getting Started?
           </h4>
           <p className="text-gray-600 dark:text-gray-300 mb-4 font-light">
-            Our support team is here to help you make the most of ProductivePro.
+            Our support team is here to help you make the most of Nexa Pro.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-500 dark:text-gray-400">
             <span>📧 c.madushankaofficial@gmail.com</span>
