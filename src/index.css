@@ -69,16 +69,6 @@
   @apply bg-apple-blue/20 text-apple-blue;
 }
 
-/* Animated gradient for logo */
-@keyframes spin-gradient {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-spin-gradient {
-  animation: spin-gradient 3s linear infinite;
-}
-
 /* Focus styles */
 button:focus-visible,
 input:focus-visible,
