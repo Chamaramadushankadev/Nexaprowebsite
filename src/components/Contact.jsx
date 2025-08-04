@@ -249,12 +249,13 @@ const Contact = () => {
                 Join thousands of professionals already using Nexa Pro to transform their workflow.
               </p>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-apple-blue font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors duration-200"
-              >
-                Start Free Trial
-              </motion.button>
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="bg-white text-apple-blue font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors duration-200"
+  onClick={() => window.location.href = 'https://app.nexapro.space'}
+>
+  Start for free
+</motion.button>
             </motion.div>
           </motion.div>
         </div>
