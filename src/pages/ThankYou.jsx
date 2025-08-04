@@ -23,7 +23,7 @@ const ThankYou = () => {
       // TODO: Replace with actual email service integration
       // Example: EmailJS, Formspree, or your backend API
       console.log('Sending confirmation email to:', email);
-      console.log('Admin notification sent to: c.madushankaofficial@gmail.com');
+      console.log('Admin notification sent to: hello@nexapro.space');
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -234,7 +234,7 @@ const ThankYou = () => {
             Our support team is here to help you make the most of Nexa Pro.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-500 dark:text-gray-400">
-            <span>📧 c.madushankaofficial@gmail.com</span>
+            <span>📧 hello@nexapro.space</span>
             <span>📞 24/7 Support Available</span>
             <span>💬 Live Chat Ready</span>
           </div>
