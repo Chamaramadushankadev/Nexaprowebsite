@@ -117,13 +117,18 @@ const Footer = () => {
               className="mb-6"
             >
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-apple-blue to-apple-purple rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">P</span>
+                <div className="w-12 h-12 rounded-xl overflow-hidden relative flex items-center justify-center">
+                  <div className="absolute inset-0 animate-spin-gradient bg-[conic-gradient(at_center,_#a855f7,_#ec4899,_#a855f7)]"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                       strokeLinejoin="round" className="lucide lucide-zap w-7 h-7 text-white relative z-10">
+                    <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+                  </svg>
                 </div>
-                <span className="text-2xl font-bold">ProductivePro</span>
+                <span className="text-2xl font-bold">Nexa Pro</span>
               </div>
               <p className="text-gray-300 leading-relaxed mb-6 font-light">
-                The all-in-one productivity workspace designed to help you work smarter, not harder. 
+                The next-generation productivity workspace designed to help you work smarter, not harder. 
                 Join thousands of professionals worldwide.
               </p>
               
@@ -184,7 +189,7 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="flex items-center space-x-2 text-gray-400 font-light"
             >
-              <span>© {currentYear} ProductivePro. All rights reserved.</span>
+              <span>© {currentYear} Nexa Pro. All rights reserved.</span>
             </motion.div>
             
             <motion.div

@@ -130,8 +130,8 @@ const ThankYou = () => {
         >
           Welcome to
           <br />
-          <span className="bg-gradient-to-r from-apple-blue via-apple-purple to-apple-green bg-clip-text text-transparent">
-            ProductivePro!
+          <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Nexa Pro!
           </span>
         </motion.h1>
 
@@ -140,7 +140,7 @@ const ThankYou = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed font-light"
         >
-          Thank you for choosing ProductivePro. Your productivity journey starts now!
+          Thank you for choosing Nexa Pro. Your productivity journey starts now!
         </motion.p>
 
         {/* Email Confirmation Status */}
