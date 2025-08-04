@@ -27,7 +27,7 @@ const ContactSupportModal = ({ isOpen, onClose }) => {
     try {
       // TODO: Replace with actual email service integration
       // Example: EmailJS, Formspree, or your backend API
-      console.log('Sending support request to: c.madushankaofficial@gmail.com');
+      console.log('Sending support request to: hello@nexapro.space');
       console.log('Form data:', formData);
       
       // Simulate API call
@@ -191,10 +191,10 @@ const ContactSupportModal = ({ isOpen, onClose }) => {
                   <p className="text-sm text-gray-600 dark:text-gray-300">
                     You can also reach us directly at{' '}
                     <a 
-                      href="mailto:c.madushankaofficial@gmail.com" 
+                      href="mailto:hello@nexapro.space" 
                       className="text-apple-blue hover:underline font-medium"
                     >
-                      c.madushankaofficial@gmail.com
+                      hello@nexapro.space
                     </a>
                   </p>
                 </div>
