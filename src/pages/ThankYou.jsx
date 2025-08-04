@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Mail, Download, ArrowRight, Sparkles } from 'lucide-react';
+import { CheckCircle, Mail, Download, ArrowRight, Sparkles, UserPlus } from 'lucide-react';
 
 const ThankYou = () => {
   const [userEmail, setUserEmail] = useState('');
