@@ -14,6 +14,7 @@ const Testimonials = () => {
       company: 'TechFlow',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
       content: 'ProductivePro has completely transformed how our team works. The intuitive design and powerful features make productivity feel effortless.',
+      content: 'Nexa Pro has completely transformed how our team works. The intuitive design and powerful features make productivity feel effortless.',
       rating: 5
     },
     {

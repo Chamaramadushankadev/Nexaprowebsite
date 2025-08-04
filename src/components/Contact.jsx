@@ -33,7 +33,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'hello@productivepro.com',
+      content: 'hello@nexapro.com',
       description: 'Send us an email anytime'
     },
     {
